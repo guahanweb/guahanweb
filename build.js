@@ -36,7 +36,8 @@ let output = chalk`
                           https://{yellow guahanweb}.com
                https://{blue github}.com/{yellow guahanweb}
           https://${chalk.blue('linkedin')}.com/in/{yellow garthhenson}
-                            {cyan garth}@{yellow guahanweb}.com`;
+                            {cyan garth}@{yellow guahanweb}.com
+                            {blue $} npx {yellow guahanweb}`;
 
 const [, ...trimmed] = output.split('\n');
 const card = chalk.white(boxen(trimmed.join('\n'), options));
