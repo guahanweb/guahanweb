@@ -1,6 +1,6 @@
 {
   "name": "guahanweb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Contact Information for Garth Henson",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
