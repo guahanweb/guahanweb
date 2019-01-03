@@ -27,15 +27,16 @@ let output = chalk`
 {yellow | |_\\ \\ (_| | |  | |_| | | | | | | |  __/ | | \\__ \\ (_) | | | |}
 {yellow  \\____/\\__,_|_|   \\__|_| |_| \\_| |_/\\___|_| |_|___/\\___/|_| |_|}
 
-        ∙ Christian and Famiily Man
-        ∙ Staff Software Engineer at {cyan @WaltDisneyCO}
-        ∙ Public speaker and mentor
 
-            https://{blue twitter}.com/{yellow guahanweb}
-                        https://{yellow guahanweb}.com
-             https://{blue github}.com/{yellow guahanweb}
-        https://${chalk.blue('linkedin')}.com/in/{yellow garthhenson}
-                          {cyan garth}@{yellow guahanweb}.com`;
+    ∙ Christian and Famiily Man
+    ∙ Staff Software Engineer at {cyan @WaltDisneyCO}
+    ∙ Public speaker and mentor
+
+              https://{blue twitter}.com/{yellow guahanweb}
+                          https://{yellow guahanweb}.com
+               https://{blue github}.com/{yellow guahanweb}
+          https://${chalk.blue('linkedin')}.com/in/{yellow garthhenson}
+                            {cyan garth}@{yellow guahanweb}.com`;
 
 const [, ...trimmed] = output.split('\n');
 const card = chalk.white(boxen(trimmed.join('\n'), options));
