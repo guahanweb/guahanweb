@@ -13,32 +13,41 @@ const options = {
   borderColor: 'green'
 };
 
-/*
-{yellow ╔═╗┌─┐┬─┐┌┬┐┬ ┬  ╦ ╦┌─┐┌┐┌┌─┐┌─┐┌┐┌}
-{yellow ║ ╦├─┤├┬┘ │ ├─┤  ╠═╣├┤ │││└─┐│ ││││}
-{yellow ╚═╝┴ ┴┴└─ ┴ ┴ ┴  ╩ ╩└─┘┘└┘└─┘└─┘┘└┘}
-*/
+// Define escaped ASCII art for our name
+const guahanweb = `                 _                             _
+  __ _ _   _  __ _| |__   __ _ _ ____      _____| |__
+ / _\` | | | |/ _\` | '_ \\ / _\` | '_ \\ \\ /\\ / / _ \\ '_ \\
+| (_| | |_| | (_| | | | | (_| | | | \\ V  V /  __/ |_) |
+ \\__, |\\__,_|\\__,_|_| |_|\\__,_|_| |_|\\_/\\_/ \\___|_.__/
+ |___/                               ${chalk.white('.: Garth Henson :.')}`;
 
+const bio = `\
+I am a husband, dad, musician, speaker, software
+engineer, application architect, hobbyist photographer,
+and Disney fan living in the Research Triangle of NC.
+Coffee and JavaScript are my love language, and I'm
+convinced I'll never be able to stop learning.`;
+
+// Actual layout using chalk template rendering for alignment
 let output = chalk`
-{yellow  _____            _   _       _   _}
-{yellow |  __ \\          | | | |     | | | |}
-{yellow | |  \\/ __ _ _ __| |_| |__   | |_| | ___ _ __  ___  ___  _ __}
-{yellow | | __ / _\` | '__| __| '_ \\  |  _  |/ _ \\ '_ \\/ __|/ _ \\| '_ \\}
-{yellow | |_\\ \\ (_| | |  | |_| | | | | | | |  __/ | | \\__ \\ (_) | | | |}
-{yellow  \\____/\\__,_|_|   \\__|_| |_| \\_| |_/\\___|_| |_|___/\\___/|_| |_|}
+{blue -------------------------------------------------------}
+  {yellow ${guahanweb}}
+{blue -------------------------------------------------------}
+       {bold Christian} {cyan |} {bold Family Man} {cyan |} {bold Speaker} {cyan |} {bold Mentor}
 
+      {bold Work:}  Staff Software Engineer at The Walt
+             Disney Company ({cyan @WaltDisneyCO})
+   {bold Twitter:}  {blue https://twitter.com/}{magenta guahanweb}
+    {bold GitHub:}  {blue https://github.com/}{magenta guahanweb}
+  {bold LinkedIn:}  {blue https://linkedin.com/in/}{magenta garthhenson}
+       {bold Web:}  {blue https://}{magenta guahanweb}{blue .com}
 
-    ∙ Christian and Famiily Man
-    ∙ Staff Software Engineer at {cyan @WaltDisneyCO}
-    ∙ Public speaker and mentor
+    {bold Events:}  {blue https://}{magenta guahanweb}{blue .github.io/speaking/}
+      {bold Card:}  {cyan npx} {magenta guahanweb}
 
-              https://{blue twitter}.com/{yellow guahanweb}
-                          https://{yellow guahanweb}.com
-               https://{blue github}.com/{yellow guahanweb}
-          https://${chalk.blue('linkedin')}.com/in/{yellow garthhenson}
-                            {cyan garth}@{yellow guahanweb}.com
-                            {blue $} npx {yellow guahanweb}`;
+{yellow ${bio}}`;
 
+// Remove leading newline and write our card to bin/output for distro
 const [, ...trimmed] = output.split('\n');
 const card = chalk.white(boxen(trimmed.join('\n'), options));
 fs.writeFileSync(path.join(__dirname, 'bin/output'), card);
